@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function calcul ( a ){
+            a();
+        }
+        calcul ( function(){ console.log("je suis un callback"); } )
+        // callback => fonction de rappel
+        //  définir ce que l'on veut faire au moment où on veut executer notre code
+
+        function calcul2 ( a ){
+            a(20);
+        }
+
+        calcul2 ( function(param){ console.log("je suis un callback " + param) ; } );
+
+        const a = function(param){ console.log("je suis un callback " + param) ; }
+        // async => codage asynchrone en javascript 
+    </script>
+</body>
+</html>
