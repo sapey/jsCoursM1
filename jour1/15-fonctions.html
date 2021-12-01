@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3 manière de créer des fonctions
+
+        // classique : function declaration
+        function a(){}
+
+        // autre manière classique : function expression
+        const b = function(){}
+        // stocker dans la variable b une fonction anonyme
+
+        // dernière manière de créer des fobctions (ES6 depuis 2015)
+        // fonction fléché (arrow function)
+        const c = () => {}
+
+
+        // Appel des fonctions
+
+        //Première méthode
+        function airCarre(){
+            console.log( 4 ** 2);
+        }
+        airCarre();
+
+        // Deuxième méthode
+        const airCarre2 = function(){
+            console.log(10 ** 2);
+        }
+        airCarre2();
+
+        // Troisième méthode
+        const airCarre3 = () => {
+            console.log(100 ** 2);
+        }
+        airCarre3();
+
+
+        // Function avec des paramètres
+
+        // Première méthode
+        function GenerateTitle ( texte, color){
+            console.log(`<h1 style=color:${color}">${texte}</h1>`);
+        }
+        GenerateTitle("premier article", "#0000");
+
+        // Deuxième méthode
+        const generateP = function(contenu, auteur){
+            console.log(`<p>${contenu} de ${auteur}</p>`);
+        }
+        generateP("lorepsum", "Sapey");
+
+        // Troisème méthode 
+        // si j'ai 0 paramètre je dois mettre les ()
+        // si j'ai 1 paramètre les () sont facultatives
+        // si j'ai > 1 paramètre les () sont obligatoire
+        const bonjour = () => { console.log("Bonjour") }
+        const bonjour2 = (prenom) => { console.log("Bonjour "+prenom) }
+        const bonjour3 = prenom => { console.log("Bonjour "+prenom) }
+        const bonjour4 = (prenom, nom) => {
+            console.log(`Bonjour ${nom} ${prenom}`);
+        }
+
+        //--------------------
+
+        function calcul(a , b){
+            const addition = a + b ;
+            return addition ; 
+        }
+
+        const resultat = calcul (2,3); 
+        console.log(resultat);
+
+        const soustraction = function(a, b) {
+            const solution = a - b ;
+            return solution ;
+        }
+
+        const resultat2 = soustraction(10 , 5);
+        console.log(resultat2);
+
+        // pour les fonctions fléchées SI vous n'avez 1 seule instruction dans la fonction
+        // qu'elle retourne une valeur 
+        // { } et return sont facultatif 
+
+        const multiplication = (a , b) => {
+            return a * b ;
+        }
+
+        const multiplication2 = (a, b) => a * b ; 
+
+        const definition = (a, b) => {
+            if(a > 0 && b > 0){
+                return a * b
+            }
+            return null ; 
+        }
+
+
+
+    </script>
+</body>
+</html>
