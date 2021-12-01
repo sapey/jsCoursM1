@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let domaine = "http://yahoo.fr";
+
+        function generatePage(){
+            console.log("domaine : "+domaine);
+            // il est possible d'utiliser une variable globale créer avant la fonction
+        }
+
+        function modifDomaine(){
+            domaine = "autre domaine";
+            console.log("en cours de modification...")
+        }
+
+        generatePage(); // yahoo.fr
+
+        modifDomaine(); // modifie
+
+        generatePage(); // autre domaine
+        // function en javascript stock les instruction dans les acolades
+        // stocker tout ce qui se passe autour => contexte lexical de la fonction
+        // CLOSURE => propriété / méthode privée dans les class
+
+    </script>
+</body>
+</html>
