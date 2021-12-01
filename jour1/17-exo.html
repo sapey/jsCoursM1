@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*
+            
+                créer un nouveau fichier 17-exo.html avec un balise <script>
+        ce script contient une fonction qui dispose de deux arguments numériques
+        si les deux arguments sont compris entre 0 et 30 ou entre 70 et 100 alors la fonction retourne true
+        sinon la fonction retourne false
+            
+        */
+
+        const jspQuoi = (number1, number2) => {
+            if(number1>=0 && number1<=30 || number1>=70 && number1<=100 ){
+                if(number2>=0 && number2<=30 || number2>=70 && number2<=100 ){
+                    return true;
+                }
+            }else {
+                return false;
+            }
+        }
+
+        const resultat = jspQuoi (1,100); 
+        console.log(resultat);
+
+    </script>
+</body>
+</html>
