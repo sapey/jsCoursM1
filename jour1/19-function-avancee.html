@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    /*
+        callback
+        closure
+        factory
+        iife
+
+        iife = Immmediately Invoqued Function Expression
+        fonction anonyme auto éxécutante
+    */
+
+    // Function que l'on doit appellé sur une autre ligne
+    function a(){
+        console.log("je suis la fonction 1");
+    }
+    a();
+
+    // Fonction nommé auto exécutante
+    (function a(){
+        console.log("je suis la fonction 2");
+    })();
+
+    // Fonction anonyme auto exécutante
+    (function(){
+        console.log("je suis la fonction 3");
+    })();
+
+    // Fonction flechée et anonyme auto exécutante
+    (() => {
+        console.log("je suis la fonction 4");
+    })();
+
+</script>
+</body>
+</html>
