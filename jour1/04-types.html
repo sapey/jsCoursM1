@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 5 grand types de valeur stocké dans les variables en javascript
+
+        // string / chaine de caractère
+        const premier = "bonjour";
+        const deuxieme = 'hello';
+        // backtick
+        const troisieme = `comment allez vous`; // template string
+
+        // chiffre
+        const chiffre1 = 2;
+        const chiffre2 = 2.2;
+        const chiffre3 = -2.2;
+        const chiffreBizarre1 = NaN; // not a number
+        const chiffreBizarre2 = Infinity;
+
+        // Boolean
+        const verif1 = true;
+        const verif2 = false;
+        const verif3 = 10 > 3;
+
+        // valeur scalaire
+        const jours = ["lundi", "mardi", "mercredi", 10, true];
+        const course = new Array("pomme", "poire", 10, false);
+
+        // object
+        //class => new class => objet
+        // en javascript on peut créer un objet DIRECTEMENT sans passer par une class
+        const etudiant ={
+            nom : "Alex",
+            age : 21,
+            isAdmin: true,
+            competences : ["js", "node", "html"],
+            adress : {
+                rue : "12 rue des arts",
+                ville : "Paris",
+                cp : 92700
+            }
+        }
+    </script>
+</body>
+</html>
