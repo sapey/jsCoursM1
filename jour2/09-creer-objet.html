@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // créer un objet litteral
+        const objet1 = {};
+
+        // créer un objet via une fonction structrice
+        // créer un objet depuis une class en POO
+        // créer des objets avant ES6
+        // c'est la fonction constructrice de l'objet
+        function Etudiant(nom, skills){
+            this.nom = nom;
+            this.skills = skills;
+        }
+
+        // prototype de la fonction construction 'Etudiant'
+        Etudiant.prototype.afficherName = function(){
+            console.log(this.nom);
+        }
+
+        Etudiant.prototype.showSkills = function(){
+            this.skills.forEach(element => {
+                console.log(element);
+            });
+        }
+
+        const etudiant = new Etudiant("Alex", ["node", "angular"]);
+
+        console.log(etudiant);
+        etudiant.showSkills();
+
+
+        // eS6 => 2015
+        class Formateur{
+            nom = "valeur par défaut";
+            age = 0;
+
+            constructor(nom, age){
+                this.nom = nom;
+                this.age = age;
+            }
+
+            getName(){
+                console.log(this.nom);
+            }
+
+            getAge(){
+                console.log(`${this.age} ans`);
+            }
+
+            static information(){ // méthode static
+                console.log("Je suis une méthode static");
+            }
+        }
+        const formateur = new Formateur("Sapey", 22);
+        formateur.getAge();
+        formateur.getName();
+        Formateur.information();
+    </script>
+</body>
+</html>

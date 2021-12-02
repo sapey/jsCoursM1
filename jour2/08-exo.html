@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+/* cas pratique 
+
+    créer le fichier 08-exo.html 
+
+dans ce fichier objet qui s'appelle formation 
+
+dispose de 3 propriétés 
+    matieres : [
+        {nom : js , duree : 1},
+        {nom : html , duree : 1},
+        {nom : php , duree : 3},
+        ] 
+    duree : 5 ,
+    unite : semaines 
+    3 méthodes : 
+        description
+        afficher dans la console le texte suivante 
+        la formation dure 5 semaines 
+
+        filtre avec un paramètre nb 
+            retourne un tableau enfonction de la durée de la matiere
+            exemple :
+            formation.filtre(1) => [{nom : js , duree : 1},
+            {nom : html , duree : 1}]
+            formation.filtre(0) => "une matière n'a une durée de 0"
+
+        dureeTotal 
+            faire la somme des durées de la formation => 5
+
+            */
+        let total = 0;
+        const formation = {
+
+            matieres : [
+                {nom : "js" , duree : 1},
+                {nom : "html" , duree : 1},
+                {nom : "php" , duree : 3},
+            ],
+            duree : 5 ,
+            unite : "semaines",
+            description : function(){
+                console.log(this);
+                console.log("La formation dure " + this.duree + " " + this.unite);
+            },
+            filtre(nb) {
+                const articleFilter = this.matieres.filter((itemFiltre) => {
+                    return itemFiltre.duree === nb;
+                    if (articleFilter.length == 0){
+                        console.log(`aucune matière ne correspond à ` + nb);
+                    }
+                });
+                console.log(articleFilter);
+            },
+            dureeTotal(){
+                const totalMatiere = this.matieres.reduce( function(total, item){
+                return total + item.duree;
+                }, 0);
+                console.log("La durée total des matières est : " + totalMatiere);
+                }
+            }
+        
+
+        formation.description();
+        formation.dureeTotal();
+        formation.filtre(9);
+        
+
+
+
+
+
+    </script>
+</body>
+</html>

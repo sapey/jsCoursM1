@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const etudiant = {
+            // membre de l'objet => deux types de membres
+            // propriété qui stock une valeur
+            // méthode => stock des fonctions
+            nom : "Alex",
+            age : 20,
+            skills : ["js", "node", "html"],
+            adresse : {
+                rue : "rue de Paris",
+                ville : "Paris"
+            },
+            inconnu : null,
+            description : function(){}, // méthode this
+            description2 : ( ) => {}, // this
+            // ES6
+            description3(){} // equivalent de description
+        };
+
+        const cercle = {
+            rayon : 5,
+            surface : function(){
+                console.log(this); // réference
+                console.log(Math.PI * this.rayon ** 2);
+            },
+            perimetre : () => {
+                console.log(this);
+                // fait reference à window => objet global implicite de javascript
+            },
+            perimetre2 () {
+                console.log(this);
+            }
+        };
+
+        cercle.surface(); // execution méthode surface
+        cercle.perimetre();
+        cercle.perimetre2();
+    </script>
+</body>
+</html>
