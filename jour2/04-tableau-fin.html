@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const articles = [
+            {id : 1 , like : 10 , publie : false},
+            {id : 2 , like : 0 , publie : true},
+            {id : 3 , like : 50 , publie : true}
+        ];
+
+        // recherche => .find()
+        const articlesApprecie = articles.find( function(item){
+            return item.like >= 10;
+        });
+        console.log(articlesApprecie);
+
+        // filtrer des éléments et les mettre dans un tableau  => .filter()
+        const articleFilter = articles.filter((item) => { return item.like >= 10;});
+        console.log(articleFilter);
+
+        // enrichir chaque élément d'un tableau => .map()
+        // Ajouter une propriété pour chaque élément dans article
+        const articleEnrichi = articles.map( function(item){
+            return {
+                id : item.id,
+                like : item.like,
+                publie : item.publie,
+                titre : `article numéro ${item.id}`
+            }
+        });
+        console.log(articleEnrichi);
+
+        // transformer un tableau => string => .join()
+
+
+    </script>
+</body>
+</html>
