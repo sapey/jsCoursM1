@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Exo(enonce, note, dt_remise, matiere){
+
+            for(let a in arguments){
+                if(typeof arguments[a] !== "string") throw new Error(`arguments ${a} est invalid`)
+            }
+
+            this.enonce = enonce;
+            this.note = note;
+            this.dt_remise = dt_remise;
+            this.matiere = matiere;
+        }
+
+        // prototype de la fonction construction 'Etudiant'
+        Exo.prototype.Render = function(){
+            console.log(`
+                <h1> Enoncé ${this.matiere}</h1>
+                <p<${this.enonce}</p>
+                <ul>
+                    <li>à rendre le ${this.dt_remise}</li>
+                </ul>
+            `);
+        }
+
+        const exo = new Exo("Faites le calcul de 4 + 5", "A réalisé en 30 min", "29/09/2000", "Mathématique");
+        console.log(exo);
+        exo.Render();
+    </script>
+</body>
+</html>

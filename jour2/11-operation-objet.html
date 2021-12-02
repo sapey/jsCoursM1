@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // récupère des valeurs ( méthode normal )
+
+        const objet = {
+            nom : "Sapey"
+        }
+        console.log(objet.nom);
+
+        // méthode de destructuration
+        // destructuration d'objet => ES6
+        const {nom} = objet;
+        console.log(nom);
+
+        const librairie = {
+            search(){},
+            dom(){},
+            title : "je suis le titre"
+        }
+
+        // méthode pour appeller attribut
+        librairie.title;
+        librairie.search();
+        librairie.dom();
+
+        // méthode par destructuration
+        const {title, search, dom} = librairie; // On peut désormais faire appel aux attributs via leurs nom
+        title;
+        search;
+        dom;
+
+
+        // fusioner des objets
+        const a = { a: 1, b : 2}
+        const b = { c: 1, b : 5}
+
+        const c = Object.assign({}, a,b);
+
+        console.log(c);
+
+
+        // Chainage optionnel
+        const pause = {
+            duree : 15,
+            unite : "minutes"
+        }
+        console.log(pause.unite);
+        console.log(pause.inconnu); // retourne un undefined
+        console.log(pause.inconnu.reduce());// retourne une erreur
+        console.log(pause.inconnu?.reduce());// retourne undefined
+
+
+    </script>
+</body>
+</html>
