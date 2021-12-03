@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        créer un nouveau fichier 11-exo.html
+        h1
+        3 p
+        h2
+        2 p 
+        en javascript réaliser les modifications du DOM (Document Object Model) suivant
+        h1 => remplir de texte => Introduction
+            styliser centrer et mettre en couleur bleue
+        3 premiers p 
+            => texte de taille 30 mots de votre choix 
+            => padding left 20px
+            => text shadow 1px 1px noire
+        h2 => remplir avec du texte Conclusion
+            styliser souligner
+        deux derniers p 
+            => 10 mots de votre choix
+            => aligner sur la droite 
+    -->
+    <h1></h1>
+
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <h2></h2>
+
+    <p></p>
+    <p></p>
+
+    <script>
+         
+         
+
+         const h1 = document.querySelector("h1");
+         h1.innerText = "Introduction";
+         h1.style.textAlign = "center";
+         h1.style.color = "blue";
+
+         const p = document.querySelectorAll("p");
+         const text = "lorem lorem lorem"
+         for(let i = 0 ; i<=2 ; i++){
+            p[i].innerText = text;
+            p[i].style.paddingLeft="20px";
+            p[i].style.textShadow = "1px 1px black";
+         }
+         const h2 = document.querySelector("h2")
+        h2.innerText = "Conclusion";
+        h2.style.textDecoration = "underline"
+        
+        texte = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit, ab.`;
+        for(let i = p.length - 2 ; i <= p.length ; i++){
+            p[i].innerText = texte;
+            p[i].style.textAlign = "right";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Expedita nulla adipisci praesentium eum.</p>
+    <p>Inventore rem quae eligendi ea.</p>
+    <p>Nihil unde repellat facilis debitis!</p>
+    <p>Debitis architecto sint nulla harum.</p>
+    <p>Debitis architecto sint nulla harum.</p>
+
+    <script>
+        const p = document.querySelectorAll("p");
+        p[0].style["color"] = "red"; // syntaxe tableau
+        p[1].style.color = "blue"; // synaxe propréré
+
+        p[2].style["text-align"] = "center";
+        p[3].style.textAlign = "right"; // camelCase
+
+        p[4].style.textDecoration = "underline";
+        p[4].style.opacity = 0.5;
+        p[4].style.fontSize = "50px";
+
+
+        // créer un objet style pour éviter de répéter
+        const style = {
+            "color" : "pink",
+            "font-size" : "15px",
+            "text-decoration" : "underline",
+            "text-align" : "center"
+        }
+
+        for(let prop in style){
+            p[5].style[prop] = style[prop];
+        }
+    </script>
+</body>
+</html>
