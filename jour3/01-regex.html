@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // manipuler chaine de caractère en javascript
+        const arbre = "Sapin";
+        // Ajouter des méthodes / propriétés dans la variable arbre
+        arbre.toLowerCase();
+        arbre.toUpperCase();
+
+        // Transformer une chaine de caractère en un tableau
+        const adresse = "75 rue du Paradis 92270 Bois-Colombes";
+        const tableau = adresse.split(' ');
+        console.log(tableau);
+        // uniquement en un caractère bien précis
+        /* [
+            "75 rue du paradis",
+            92700,
+            "Bois-Colombes"
+        ] */
+
+        // Expression régulière
+        // pattern => forme / partie d'une chaine de caractère
+        // réaliser des découpes
+
+        // pour créer un expression régulière deux manières :
+
+        const pattern = /express/ ; // méthode courte
+        const pattern2 = new RegExp("express"); // utiliser la class RegExp()
+
+        // plage de carctère
+        // multiplicateur
+        // début / fin
+        // groupe
+
+        const phrase = "Bonjour les amis";
+
+        // est ce que dans une phrase il y a la lettre a n'importe ou 
+        // au moin une fois
+
+        const pattern1 = /z/;
+
+        // deux manières de tester le pattern sur la phrase
+
+        console.log(phrase.match(pattern1));
+        // Array [ "a" ] si c'est trouvé
+        // sinon retourne null
+
+        console.log(pattern1.test(phrase));
+        // true
+        // false
+
+
+        // plage de lettre
+
+        const pattern3 = /[abc]/;
+        // recherche a ou b ou c n'importe ou
+
+        const phrase3 = "bonjour";
+
+        const pattern4 = /[a-z]/;
+        // contient une lettre de l'alphabet en minuscule n'importe ou
+
+        const pattern5 = /[a-ZA-Z]/;
+        // toutes les lettre de l'alphabet en minuscule ou majuscule
+        // Attention pas de caractère spéciaux
+
+        const pattern6 = /[a-ZA-Zéèê]/;
+        // pour éùèê
+
+        const pattern7 = /[a-ZA-Zéèê0-9]/;
+        // avec les nombre en plus
+
+
+        // Raccourci de plage de caractère
+        const pattern8 = /./;
+        // va retourner true si il y à la présence de n'importe quel caratctère
+
+        const pattern9 = /[\d]/;
+        // présence de chiffre entre 0 et 9
+
+        const pattern9 = /[\D]/;
+        // tout sauf les chiffres
+
+
+
+    </script>
+</body>
+</html>
