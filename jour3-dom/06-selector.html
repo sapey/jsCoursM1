@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="intro">Lorem ipsum dolor sit.</h1>
+    <p>Lorem ipsum dolor sit.</p>
+    <p>Nobis ducimus ullam numquam!</p>
+    <ul>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Suscipit, quos ipsam!</li>
+        <li>Recusandae, maxime tenetur.</li>
+    </ul>
+    <script>
+
+        document.getElementById("intro");
+        document.querySelector("#intro");
+        // impossible de selectionner la balise p avec getElementById
+
+        document.querySelector("p");
+        // si vous avez plusieurs p querySelector selectionne que le premier
+
+        // si je veux selectionner tout les p
+        const p = document.getElementsByTagName("p");
+        console.log(p[1]);
+
+        // si je veux selectionner tout les li
+        const li = document.querySelectorAll("li");
+        console.log(li);
+        /*
+        getElementById("id") // retourne 1 balise sinon null
+        getElementsByTagName() // [balise, balise]
+        getElementsByClassName() // [balise, balise]
+        querySelector("css") // retourne 1 balise sinon null
+        */
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit.</h1>
+    <p>Lorem ipsum dolor sit <a href=""></a> jio</p>
+    <h2>Lorem</h2>
+    <script>
+        const h1 = document.querySelector("h1");
+        const p = document.querySelector("p");
+
+        const texteh1 = p.innerText;
+        const texte2h1 = p.innerHTML; // inclu les autre balise du p de html
+        console.log(texteh1);
+        console.log(texte2h1);
+
+        // ecrit dans la balise h2
+        document.querySelector("h2").innerText = "bonjour";
+        document.querySelector("h2").innerText = "<b>bonjour</b>"; // renvoie le texte et écris en brut les balise
+
+        document.querySelector("h2").innerHTML = "bonjour";
+        document.querySelector("h2").innerHTML = "<b>bonjour</b>"; // applique les balise html
+    </script>
+</body>
+</html>
