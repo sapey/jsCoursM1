@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Bonjour</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, fugiat.</p>
+    <script>
+        const h1 = document.querySelector("h2");
+        const p = document.querySelector("p");
+        console.log(h1.innerText);
+        console.log(p.innerText);
+
+        // destructuration de document : 
+        const {querySelector} = document;
+        // deux méthode pour le innertext
+        // 1
+        const h2Bis = querySelector("h2");
+        console.log(h2Bis.innerText);
+        // 2
+        console.log(querySelector("h2").innerText);
+    </script>
+</body>
+</html>
