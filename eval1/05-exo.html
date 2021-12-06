@@ -27,7 +27,17 @@
             {id : 4 , contenu : "lorem 4" , id_article : 2},
             {id : 5 , contenu : "lorem 5" , id_article : 1},
         ];
-        
+
+        const data = articles.map(article => {
+            return Object.assign(
+                {},
+                article,
+                {commentaires : commentaires.filter(el => el.id_article === article.id)},
+                {auteurs : auteurs.filter(ele => ele.id === article.id_auteur)}
+            )
+        });
+        console.log(data);
+
     </script>
 </body>
 </html>
