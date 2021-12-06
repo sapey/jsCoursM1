@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function firstNonRepeatingCharacter(str) {
+            for (let i = 0; i < str.length; i++) {
+                let char = str[i];
+                if (str.indexOf(char) == i && str.indexOf(char, i + 1) == -1) {
+                    return char;
+                }
+            }
+        return null;
+        }
+
+        const mot = "bonjour";
+        //const mot = "hello henry";
+        //const mot = "coucou";
+        let test = firstNonRepeatingCharacter(mot);
+        console.log(test);
+
+    </script>
+</body>
+</html>
