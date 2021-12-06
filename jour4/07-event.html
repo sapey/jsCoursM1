@@ -7,10 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    <button>Action1</button>
+    <button onclick="action1()">Action1</button>
     <p>Lorem ipsum dolor sit amet.</p>
     <script>
-        
+        // 3 manière de mettre en place Event
+
+        // 1ere méthode : ajouter un attribut onclick="nom_methode"
+        function action1(){
+            document.querySelector("p").style["color"] = "green";
+        }
+    </script>
+
+
+    <!-- 2eme méthode -->
+    <button class="btn2">Action2</button>
+    <p class="p2">Lorem ipsum dolor sit</p>
+    <script>
+        document.querySelector(".btn2").onclick = function(){
+            document.querySelector(".p2").style["color"] = "pink";
+        }
+    </script>
+
+
+    <!-- 3eme méthode-->
+    <button class="btn3">Action 3</button>
+    <p class="p3">Lorem ipsum dolor sit amet.</p>
+    <script>
+        // methode DOM2
+        document.querySelector(".btn3").addEventListener( "click", function(){
+            document.querySelector(".p3").style["color"] = "blue";
+        });
     </script>
 </body>
 </html>
