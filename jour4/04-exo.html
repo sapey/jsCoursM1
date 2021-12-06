@@ -7,8 +7,25 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>Lorem, ipsum dolor.</p>
+    <p>Earum, sit iusto.</p>
+    <p>Est, ut eaque.</p>
     <script>
-        
+        const p  = document.querySelectorAll("p");
+        console.log(p);
+        const pInitial = [];
+        p.forEach( (element , index) => {
+            pInitial.push(element.cloneNode(true))
+            // pInitial[index] = element.cloneNode(true)
+        })
+        console.log(pInitial);
+
+        //const pInitial2 = document.querySelectorAll("p").cloneNode(true);
+
+        p[2].innerText = "bonjour";
+        console.log(pInitial[2].innerText);
+        // console.log(pInitial2[2].innerText);
     </script>
 </body>
 </html>

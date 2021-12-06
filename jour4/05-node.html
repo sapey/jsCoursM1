@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>Lorem, ipsum dolor.</li>
+        <li>Officiis, dolorum molestiae?</li>
+    </ul>
+    <script>
+        const li = document.querySelector("li"); // {}
+
+        li.innerHTML = "bonjour les amis";
+        li.style["color"] = "red";
+        li.style.fontSize = "20px";
+
+        // ajouter un attribut dans la balsie selectionné
+
+        li.setAttribute("id", "introduction"); // ajoute un id introduction
+        li.setAttribute("title", "decouverte des nodes"); // ajoute un title
+
+        li.className = "intro info first"; // ajout d'une class
+        li.setAttribute("class", "class1 class2 class3"); // ajout d'une class
+
+        li.classList.add("nouveau"); // ajout d'un nouveau champ dans la class
+
+        li.classList.remove("class1"); // supprime un élément de la class et laisse les autres
+
+        li.classList.toggle("absent"); // ajouter si la class n'est pas la
+
+        li.classList.remove("class2"); // supprime si la classe est présente
+
+
+
+        // data-
+    </script>
+
+    <p data-couleur="blue" data-font-size="20px" data-border="2px solid green">lorem eieje</p>
+
+    <script>
+        const p = document.querySelector("p");
+        console.log(p.dataset.couleur); // récupere les attributs du data
+        console.log(p.dataset.fontSize);
+        console.log(p.dataset.border);
+        p.dataset.fontSize = "40px"; // modifie un élément data
+    </script>
+
+    <h1>bonjour tout le monde <small>sous titre</small></h1>
+    <script>
+        const h1 = document.querySelector("h1");
+
+        console.log(h1.nodeName); // nom de la balise selectionné H1
+        console.log(h1.nodeType); // element => balise html
+                                  // Node de type Text
+
+        console.log(h1.firstChild);
+        // #text "bonjour tout le monde"
+        console.log(h1.firstElementChild);
+        // balise small
+    </script>
+
+    <div>
+        <h2>exemple bizarre</h2>
+    </div>
+    <script>
+        const div = document.querySelector("div")
+        console.log(div.firstChild); // le saut de ligne 
+    </script>
+    <section><img src="" alt=""></section>
+    <script>
+        const section = document.querySelector("section")
+        console.log(section.firstChild); // img
+    </script>
+
+    <h3>Lorem, <a href="">lien</a> ipsum dolor <a href="">fin</a>.</h3>
+
+    <script>
+        const h3 = document.querySelector("h3");
+        h3.firstChild.textContent = "modification ...";
+
+        // noeud après au même niveau
+        h3.nextSibling;
+        h3.nextElementSibling;
+
+        // noeud avant au même niveau AVANT
+        h3.previousSibling()
+        h3.previousElementSibling()
+
+        h3.querySelector() // DANS la balise
+
+        h3.closest() // remonter vers la parent 
+
+        h3.closest(".intro").querySelector("p").nextElementSibling()
+</script>
+</body>
+</html>
