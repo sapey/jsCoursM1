@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://google.fr">google</a>
+    <form>
+        <input type="submit">
+    </form>
+    <script>
+        // comportement par défaut du navigateur qui va executer AVANT votre javascript
+        document.querySelector("a").addEventListener("click", function(e){
+            // e = Evenement => permettre de récupérer l'évenement déclenché
+            e.preventDefault(); // bloque le comportement par défaut du navigateur
+            console.log("j'ai cliqué sur a");
+
+            // traitement ..
+
+            setTimeout( () =>{
+                location.href = this.href;
+            } , 2000);
+            // attend deux secondes avant de redirigé vers la page
+        });
+    </script>
+
+
+    <input type="text" class="nom">
+    <script>
+        document.querySelector(".nom").addEventListener("keydown", function(e){
+            console.log(e.key);
+        })
+        // keydown keyup keypress input
+    </script>
+
+    <input type="text" class="age">
+    <script>
+        document.querySelector(".age").addEventListener("input", function(e){
+            console.log(e.target.value)
+        })
+        // focus => rentre dans le champs
+        // blur => sors du champ
+        // change => sort ET que la valeur dans le champ a été modifié
+    </script>
+</body>
+</html>

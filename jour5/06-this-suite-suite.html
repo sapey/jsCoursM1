@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, dicta!</p>
+    <script>
+        // POO => this ne peut être utuilisé QUE dans les class
+        // this peut être utilisé dans les class ET function
+
+        function action1(){
+            console.log(this);
+        }
+        // executer
+        action1(); // this = window
+
+        document.querySelector("p").addEventListener("click", action1);
+        // this => balide p
+
+        const etudiant = {
+            nom : "Alain",
+            age : 18,
+            action : action1
+        }
+        etudiant.action(); // this { etudiant }
+
+        // permettent de définir la valeur de this dans la fonction
+        // .bind() ( change la valeur de this)
+        // .call()
+        // .apply()
+
+        function nbElement (){
+            console.log(this);
+            console.log(this.length);
+        }
+        nbElement();
+
+        nbElement.bind(["2", "3"])(); // change le this en un tableau ["2","3"]
+        nbElement.bind("Bonjour les amis")(); 
+
+        // -------------------------------- bind ---------------------------------------------
+        const a = {
+            x : 10,
+            y : 20
+        }
+        const b = {
+            x : 2,
+            y : 3
+        }
+        const addition = function (){
+            console.log(this.x + this.y);
+        }
+        addition.bind(a)(); // que l'objet a
+        addition.bind(b)(); // que l'objet b
+        addition(); // not a number
+
+
+        // -------------------------------- call ---------------------------------------------
+
+        const cercle = {
+            rayon : 10
+        }
+
+        function aire ( unite ){
+            const r = Math.PI * this.rayon ** 2;
+            console.log(r + " " + unite);
+        }
+        aire.call( cercle , "cm")
+
+
+        // -------------------------------- apply ---------------------------------------------
+
+        const multiplication = function (a, b, c){
+            console.log(this.initial * a * b * c)
+        }
+
+        multiplication.apply({initial : 10}, [3,4,5])
+
+
+
+    </script>
+</body>
+</html>
