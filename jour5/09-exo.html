@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="exo">
+    <script>
+        // créer un nouveau fichier 09-exo.html
+        // input de type texte class exo 
+
+        // vous devez créer un script js qui interdit les caractères < >
+        // si vous utilisez ces caractères => supprimer du champ 
+        document.querySelector(".exo").addEventListener("keyup" , function(e){
+            if(e.key == "<" || e.key == ">"){
+               e.target.value = e.target.value.replace(/[<>]/ , "");
+               // e.target.value = e.target.value.replace(e.key , ""); 
+            }
+        })
+    </script>
+</body>
+</html>
