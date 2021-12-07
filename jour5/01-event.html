@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- button.btn$*3>{action $}-->
+    <button class="btn1" onmouseenter="action1()">adtion 1</button>
+    <button class="btn2">adtion 2</button>
+    <button class="btn3">adtion 3</button>
+    <script>
+        // 3 manières d'associer un élément html à une action
+
+        // function action1(){}
+        // const action1 = function(){}
+        const action1 = () => {
+            alert("bonjour");
+            document.querySelector(".btn1").removeAttribute("onmouseenter");
+            // suppression de l'event une fois qu'il est effectué
+        }
+
+        // DOM 0
+
+        const action2 = function(){
+            alert(2);
+            document.querySelector(".btn2").onmouseenter = function(){}
+            // suppression de l'event
+        }
+        document.querySelector(".btn2").onmouseenter = action2; // ajoute un event au bouton
+        
+
+        // comportement 1 / comportement 2 ...
+        const action3 = function(){
+            alert("action3")
+        }
+        document.querySelector(".btn3").addEventListener("mouseenter", action3);
+        document.querySelector(".btn3").addEventListener("mouseenter", () =>{
+            alert("autre action3")
+        });
+
+        // si je veux supprimer une action
+        document.querySelector(".btn3").removeEventListener("mouseenter", action3);
+    </script>
+</body>
+</html>
