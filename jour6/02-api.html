@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- API : Application Program Interface 
+        moyen de faire communiquer deux logiciels 
+        front html / css / js
+        back base de données stockée sur un serveur 
+
+        AJAX => requete AJAX auprès du serveur 
+        Méthode GET / POST / PUT DELETE (verbe)
+        body => info envoyé client vers le serveur 
+        headers entête => requête http 
+            => format envoyé ou attendu
+            => cookie 
+            => Authorisation 
+
+        côté serveur 
+        réponse 
+            entête => status 200 / 
+                             404 => not found
+                             400 => bad Request
+                             401 => Not Authorisé
+                             500 => erreur serveur 
+
+            body => JSON data sous le format JSON 
+    -->
+
+    <div></div>
+
+    <script>
+        // https://jsonplaceholder.typicode.com/
+        // API factice 
+        // https://jsonplaceholder.typicode.com/posts
+
+        const requete = new XMLHttpRequest()
+
+        requete.open("GET", "https://jsonplaceholder.typicode.com/posts");
+        requete.send(); // envoie information dans le body
+        // requete.setRequestHeader(); // 
+        requete.onload = function(){
+            const reponse = requete.responseText;
+            const data = JSON.parse( requete.responseText);
+            document.querySelector("div").innerHTML = genererPage(data);
+            //console.log(reponse);
+        }
+
+        function genererPage(data){
+            return data.map(element => {
+                return `<article>
+                    <h2>${element.title}</h2>
+                    <p>${element.body}</p>
+                    <hr>
+                    </article>`
+            }).join("")
+        }
+
+
+    </script>
+</body>
+</html>
