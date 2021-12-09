@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        // identifant récupérer depuis firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+        import firebaseConfig from "./config.js";
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        console.log(app);
+      </script>
+</body>
+</html>
