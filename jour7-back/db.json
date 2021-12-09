@@ -1,14 +1,24 @@
 {
-    "todos" : [
-        {
-            "id" : 1,
-            "name" : "tâche 1",
-            "status" : true
-        },
-        {
-            "id" : 2,
-            "name" : "tâche 2",
-            "status" : false
-        }
-    ]
+  "todos": [
+    {
+      "id": 1,
+      "name": "tâche 1",
+      "status": true
+    },
+    {
+      "id": 2,
+      "name": "tâche 2",
+      "status": false
+    },
+    {
+      "name": "Tache 3",
+      "status": false,
+      "id": 3
+    },
+    {
+      "name": "wsh 3",
+      "status": false,
+      "id": 4
+    }
+  ]
 }
