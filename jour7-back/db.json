@@ -1,0 +1,14 @@
+{
+    "todos" : [
+        {
+            "id" : 1,
+            "name" : "tâche 1",
+            "status" : true
+        },
+        {
+            "id" : 2,
+            "name" : "tâche 2",
+            "status" : false
+        }
+    ]
+}
