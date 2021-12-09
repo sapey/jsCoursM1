@@ -1,0 +1,26 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "titre": "article1"
+    },
+    {
+      "id": 2,
+      "titre": "article2"
+    },
+    {
+      "titre": "Mon troisième article",
+      "id": 3
+    },
+    {
+      "titre": "Mon quatrième article",
+      "id": 4
+    }
+  ],
+
+  "users" : [
+    { "id" : 1 , "nom" : "Sapey" , "age" : 13},
+    { "id" : 2 , "nom" : "Medhi" , "age" : 18},
+    { "id" : 3 , "nom" : "Samir" , "age" : 39}
+  ]
+}
