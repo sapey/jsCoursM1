@@ -16,9 +16,24 @@
       "id": 3
     },
     {
-      "name": "wsh 3",
+      "name": "Tâche 4",
       "status": false,
       "id": 4
+    },
+    {
+      "name": "Tâche 5",
+      "status": false,
+      "id": 5
+    },
+    {
+      "name": "Tâche 6",
+      "status": false,
+      "id": 6
+    },
+    {
+      "name": "Tâche 7",
+      "status": false,
+      "id": 7
     }
   ]
 }
