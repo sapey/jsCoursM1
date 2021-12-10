@@ -8,7 +8,8 @@
 </head>
 <body>
     <button class="btn1">Ajouter un noeud</button>
-    <button class="btn2">Ajouter un noeud</button>
+    <button class="btn2">Ajouter un noeud ID</button>
+    <button class="btn3">SUpprimer un noeud ID</button>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
         import {firebaseConfig} from "./config.js";
@@ -22,6 +23,8 @@
             ref, // selectionne un noeud
             set, // update => (noeud, {data ...})
             push, // créer un noeud
+            onValue, // obesrvable
+            remove // supprimer un noeud
          } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
 
          const db = getDatabase( app, "https://fir-h3-m1-default-rtdb.europe-west1.firebasedatabase.app/");
@@ -48,7 +51,7 @@
         document.querySelector(".btn2").addEventListener("click", async function(){
              try{
                 const refNoeud = ref(db, "demo/")
-                const idNoeud = push(refNoeud) // génere un id au hasard
+                const idNoeud = await push(refNoeud) // génere un id au hasard
                 const formulaire = {
                     nom: "Sapey",
                     age : 20,
@@ -60,6 +63,24 @@
              catch(ex){
                 console.log(ex)
              }
+         })
+
+
+         window.addEventListener("DOMContentLoaded", function(){
+             // obesrvable => déclencher des que la base db est modifié
+             onValue(ref(db, "demo") , (snapshot)=> {
+                 snapshot.forEach( (data) =>{
+                     console.log(data.key); // le numéro du noeud
+                     console.log(data.val()); // données stockées dans le noeud
+                 })
+             })
+         })
+
+
+
+         documen.querySelector(".btn3").addEventListener("click", function() {
+             const refNoeud = ref(db, "demo/1235")
+             remove(refNoeud);
          })
       </script>
 </body>
