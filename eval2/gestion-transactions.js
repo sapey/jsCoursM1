@@ -36,7 +36,7 @@ window.addEventListener("DOMContentLoaded"  , async() => {
 
 
     // gestion du nombre du total de transactions
-    document.querySelector(".total").innerHTML = totalDepense - totalRecette; 
+    document.querySelector(".total").innerHTML = totalDepense + totalRecette; 
 
 
     // écouter quand on clique dans la zone js-list-tache
@@ -45,7 +45,7 @@ window.addEventListener("DOMContentLoaded"  , async() => {
         if(e.target.className.includes("btn")){
             const form = e.target.parentNode;
             const action = e.target.value ;
-            const id = form.id.value
+            const id = form.id.value;
             if(action == "modifier"){
                 const data = {
                     id : id,
@@ -67,12 +67,22 @@ function genererFormsTaches(data){
     if(data.length === 0) return "<p>Veuillez ajouter des transactions</p>";
 
     return data.map( d => {
-        return `<form class="d-flex my-3">
-        <input type="number" name="id" class="form-input" value="${d.id}" readonly>
+        return `<form class="row">
+        <div class="headerList col-sm-3">
+            <input type="number" name="id" class="form-input" value="${d.id}" readonly>
+        </div>
+        <div class="headerList col-sm-3">
         <input type="text" name="name" class="form-input" value="${d.name}">
+        </div>
+        <div class="headerList col-sm-3">
         <input type="number" name="montant" class="form-input" value="${d.montant}">
-        <input type="submit" class="btn btn-primary mx-3" value="modifier">
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="modifier">
+       
+       
         <input type="submit" class="btn btn-danger" value="supprimer">
+        
     </form>`
     } ).join("")
 }
