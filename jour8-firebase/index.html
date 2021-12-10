@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn1">Ajouter un noeud</button>
+    <button class="btn2">Ajouter un noeud</button>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js";
+        import {firebaseConfig} from "./config.js";
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        // manipuler la base de donées créée
+        import { 
+            getDatabase , // selectionner une BDD
+            ref, // selectionne un noeud
+            set, // update => (noeud, {data ...})
+            push, // créer un noeud
+         } from "https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js";
+
+         const db = getDatabase( app, "https://fir-h3-m1-default-rtdb.europe-west1.firebasedatabase.app/");
+
+         // ajouter un nouveau noeud dans la base
+
+        document.querySelector(".btn1").addEventListener("click", async function(){
+             try{
+                const refNoeud = ref(db, "demo/1235")
+                const formulaire = {
+                    nom: "Sapey",
+                    age : 20,
+                    isAdmin : true
+                }
+                const a = await set( refNoeud, formulaire)
+                console.log(a);
+            }
+             catch(ex){
+                console.log(ex)
+             }
+         })
+
+
+        document.querySelector(".btn2").addEventListener("click", async function(){
+             try{
+                const refNoeud = ref(db, "demo/")
+                const idNoeud = push(refNoeud) // génere un id au hasard
+                const formulaire = {
+                    nom: "Sapey",
+                    age : 20,
+                    isAdmin : true
+                }
+                const a = await set( idNoeud, formulaire)
+                console.log(a);
+            }
+             catch(ex){
+                console.log(ex)
+             }
+         })
+      </script>
+</body>
+</html>
