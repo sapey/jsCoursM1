@@ -77,12 +77,14 @@ function genererFormsTaches(data){
         <div class="headerList col-sm-3">
         <input type="number" name="montant" class="form-input" value="${d.montant}">
         </div>
-
-        <input type="submit" class="btn btn-primary" value="modifier">
-       
-       
-        <input type="submit" class="btn btn-danger" value="supprimer">
         
-    </form>`
+        <button type="submit" class="btn btn-primary" value="modifier">modifier</button>
+        
+       
+       
+        <button type="submit" class="btn btn-danger" value="supprimer">supprimer</button>
+        
+    </form>
+    <hr>`
     } ).join("")
 }
